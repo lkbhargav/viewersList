@@ -15,7 +15,11 @@
             <input type="submit" value="Generate Key"/>
         </form>
         <?php
+        
+            // Staring a session
             session_start();
+        
+            // Condition to display HTML acording to the session variable status
             if(isset($_SESSION['status'])) {
                 if($_SESSION['status'] == 0) {
                     echo "<p style='color:red'> Email already exists. </p>";
@@ -25,6 +29,7 @@
                     echo "<p style='color:red'> Invalid Email. </p>";
                 }
                 
+                // Unsetting the status session
                 unset($_SESSION['status']);
             }
         ?>
